@@ -3,12 +3,12 @@ pipeline{
     stages{
         stage("Build"){
             steps{
-               echo "hi"
+               "mvn clean install"
             }
         }
         stage("Test"){
             steps{
-                echo "Hi testsss"
+                "mvn test"
             }
 
         }
