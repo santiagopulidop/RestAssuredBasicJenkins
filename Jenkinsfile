@@ -1,11 +1,6 @@
 pipeline{
     agent any
     stages{
-        stage("Clean up"){
-            steps{
-                deletDir()
-            }
-        }
         stage("Clone Repo"){
             steps{
                sh "git clone https://github.com/santiagopulidop/RestAssuredBasicJenkins"
