@@ -8,17 +8,17 @@ pipeline{
         }
         stage("Clone Repo"){
             steps{
-                "git clone https://github.com/santiagopulidop/RestAssuredBasicJenkins"
+               sh "git clone https://github.com/santiagopulidop/RestAssuredBasicJenkins"
             }
         }
         stage("Build"){
             steps{
-                "mvn clean install"
+               sh "mvn clean install"
             }
         }
         stage("Test"){
             steps{
-                "mvn test"
+               sh "mvn test"
             }
 
         }
