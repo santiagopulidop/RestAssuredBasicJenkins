@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Clone Repo"){
             steps{
-                "git clone https://github.com/santiagopulidop/RestAssuredBasicJenkins"
+               sh "git clone https://github.com/santiagopulidop/RestAssuredBasicJenkins"
             }
         }
         stage("Build"){
