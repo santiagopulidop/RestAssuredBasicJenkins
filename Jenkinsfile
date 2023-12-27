@@ -1,16 +1,33 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Build"){
-            steps{
-               sh "mvn clean install"
+
+    stages {
+        stage('Debug') {
+            steps {
+                script {
+                    echo 'Imprimiendo PATH:'
+                    sh 'echo $PATH'
+
+                    echo 'Imprimiendo ubicación de Maven:'
+                    sh 'which mvn'
+                }
             }
         }
-        stage("Test"){
-            steps{
-                sh "mvn test"
-            }
 
+        stage('Build') {
+            steps {
+                script {
+                    sh 'mvn clean install'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    sh 'mvn test'
+                }
+            }
         }
     }
 }
