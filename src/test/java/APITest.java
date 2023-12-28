@@ -11,6 +11,7 @@ public class APITest {
     public void test1(){
         Response response = RestAssured.get("https://reqres.in/api/users?page=2");
 
+
         int statusCode = response.getStatusCode();
 
         Assert.assertEquals(statusCode,200);
