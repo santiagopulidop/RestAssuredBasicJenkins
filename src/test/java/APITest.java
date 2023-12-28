@@ -36,7 +36,7 @@ public class APITest {
 
     @Test
     public void test4(){
-        given().get("https://reqres.in/api/users?page=4").
+        given().get("https://reqres.in/api/users?page=1").
                 then().statusCode(200);
     }
 }
