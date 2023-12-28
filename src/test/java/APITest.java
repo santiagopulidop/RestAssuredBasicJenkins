@@ -11,12 +11,6 @@ public class APITest {
     public void test1(){
         Response response = RestAssured.get("https://reqres.in/api/users?page=2");
 
-        System.out.println("Response: "+response.asString());
-        System.out.println("Status Code: "+response.statusCode());
-        System.out.println("Body: "+response.getBody().asString());
-        System.out.println("Time Taken: "+response.getTime());
-        System.out.println("Header: "+response.getHeader("content-type"));
-
         int statusCode = response.getStatusCode();
 
         Assert.assertEquals(statusCode,200);
